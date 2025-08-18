@@ -439,11 +439,19 @@ object-fit: cover;        /* 保持视频宽高比并填充容器 :contentRefere
         align-items: center;
         text-align: center;
       }
-      #sponsors .people a img {
-        width: 160px !important;
-        height: 160px !important;
-        max-width: none !important;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 0.5rem;
-      }
+    #sponsors .people a img {
+    width: 140px !important;
+    height: 140px !important;
+    max-width: none !important;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    }
+
+    #sponsors .people a img[src$="unitree.svg"] {
+    object-fit: contain !important;  /* 不裁剪，按比例缩进容器 */
+    padding: 5px;                   /* 通过内边距“缩小”图形 */
+    box-sizing: border-box;          /* 让 padding 包含在 140×140 内，不改变外观大小 */
+    background: #fff;                /* 与白色背景一致，避免透明边看着怪 */
+    border-radius: 0%;              /* 仍然保持圆形卡片 */
+    }
